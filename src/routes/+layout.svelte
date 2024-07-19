@@ -2,8 +2,8 @@
   import '../app.css';
 
   import { ModeWatcher } from 'mode-watcher';
-  import Header from '$lib/layout/header/header.svelte';
-  import Footer from '$lib/layout/footer/footer.svelte';
+  import { Header } from '$lib/components/layout/header';
+  import { Footer } from '$lib/components/layout/footer';
 </script>
 
 <ModeWatcher />

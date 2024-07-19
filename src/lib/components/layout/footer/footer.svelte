@@ -3,26 +3,30 @@
   import Github from '~icons/tabler/brand-github';
   import Instagram from '~icons/tabler/brand-instagram';
   import Linkedin from '~icons/tabler/brand-linkedin';
+
+  import * as config from '$lib/config/config';
 </script>
 
 <footer>
   <div>
     <ul>
       <li>
-        <Mail style="width: 1.5rem; height: 1.5rem;" />
+        <a href={config.mail} target="_blank">
+          <Mail style="width: 1.5rem; height: 1.5rem;" />
+        </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/tolosat.space" target="_blank">
+        <a href={config.instagram} target="_blank">
           <Instagram style="width: 1.5rem; height: 1.5rem;" />
         </a>
       </li>
       <li>
-        <a href="https://github.com/TOLOSAT/website" target="_blank">
+        <a href={config.github} target="_blank">
           <Github style="width: 1.5rem; height: 1.5rem;" />
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/company/tolosat/" target="_blank">
+        <a href={config.linkedin} target="_blank">
           <Linkedin style="width: 1.5rem; height: 1.5rem;" />
         </a>
       </li>
