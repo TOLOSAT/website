@@ -16,7 +16,7 @@
 
     <div class="logo">
       <a href="/">
-        <img src="tolosat-icon.png" alt="Tolosat logo" />
+        <img src="images/tolosat-icon.png" alt="Tolosat logo" />
       </a>
     </div>
 
