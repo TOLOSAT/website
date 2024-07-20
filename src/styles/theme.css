@@ -1,6 +1,8 @@
 :root {
   --background: white;
   --foreground: dark;
+  --orange: #f90;
+  --orange-muted: rgb(90, 62, 20);
 }
 
 .dark {

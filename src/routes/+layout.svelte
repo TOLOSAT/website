@@ -4,6 +4,7 @@
   import { ModeWatcher } from 'mode-watcher';
   import { Header } from '$lib/components/layout/header';
   import { Footer } from '$lib/components/layout/footer';
+  import { Construction } from '$lib/components/atoms/construction';
 </script>
 
 <ModeWatcher />
@@ -12,6 +13,7 @@
   <Header />
 
   <main>
+    <Construction />
     <slot />
   </main>
 
@@ -28,5 +30,6 @@
 
   main {
     flex: 1;
+    padding-block: 1.5rem;
   }
 </style>
