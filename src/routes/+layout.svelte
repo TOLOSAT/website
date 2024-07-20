@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { ParaglideJS } from '@inlang/paraglide-sveltekit';
+  import { i18n } from '$lib/i18n';
+
   import '../app.css';
 
   import { ModeWatcher } from 'mode-watcher';
@@ -7,18 +10,20 @@
   import { Construction } from '$lib/components/atoms/construction';
 </script>
 
-<ModeWatcher />
+<ParaglideJS {i18n}>
+  <ModeWatcher />
 
-<div class="layout">
-  <Header />
+  <div class="layout">
+    <Header />
 
-  <main>
-    <Construction />
-    <slot />
-  </main>
+    <main>
+      <Construction />
+      <slot />
+    </main>
 
-  <Footer />
-</div>
+    <Footer />
+  </div>
+</ParaglideJS>
 
 <style>
   .layout {

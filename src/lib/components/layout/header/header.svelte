@@ -1,13 +1,15 @@
 <script lang="ts">
   import Sun from '~icons/tabler/sun';
   import Language from '~icons/tabler/language';
+
+  import * as m from '$lib/paraglide/messages';
 </script>
 
 <header>
   <div class="container">
     <nav>
       <ul>
-        <li><a href="/">About</a></li>
+        <li><a href="/">{m.about()}</a></li>
         <li><a href="/">The Cubesat</a></li>
         <li><a href="/">News & Events</a></li>
         <li><a href="/">Contact</a></li>
