@@ -1,33 +1,58 @@
 # TOLOSAT Official Website
 
-<center><img src="static/tolosat-icon.png" width=30% /></center>
+<p align="center">
+  <img src="static/images/tolosat-icon.png" width="30%" alt="TOLOSAT Icon">
+</p>
 
-This is TOLOSAT official website, if you want to contribute you can refer to this
-[documentation](/CONTRIBUTING.md).
+Welcome to the official website of TOLOSAT. If you are interested in contributing, please refer to
+our [contribution guidelines](/CONTRIBUTING.md).
 
 ## ⚙️ Requirements
 
 You need to install the latest Node.js version and npm to run the website. You can download both
 [here](https://nodejs.org/en/download/package-manager).
 
-To get autocompletion and a nice code environment, I recommend using
-[VSCode](https://code.visualstudio.com/) and install **workspace recommended extensions**.
+> [!IMPORTANT]
+> To get autocompletion and a nice code environment, I recommend using
+> [VSCode](https://code.visualstudio.com/) and install **workspace recommended extensions** in the
+> extension panel.
 
 ## ⚡️ Quick Usage
 
 To quickly run the website, you need to know the following commands:
 
-- `npm install` installs dependencies.
-- `npm run dev` opens the website in your web browser.
-- `npm run build` builds the website.
+| Command         | Description                       |
+| --------------- | --------------------------------- |
+| `npm install`   | Installs dependencies             |
+| `npm run dev`   | Starts the development server     |
+| `npm run build` | Builds the project for production |
+
+> [!TIP]
+> I recommend using [pnpm](https://pnpm.io/installation) instead of **npm** to save disk
+> space and boost installation speed. More information [here](https://pnpm.io/motivation).
 
 ## ✨ Features
 
-Nothing for now.
+### 🎨 Color Codes
 
-## 👷 Current State
+- 🟢 **Green**: The feature is finished and fully implemented.
+- 🟠 **Orange**: The feature is currently being worked on.
+- 🔴 **Red**: The feature has not yet been started.
 
-TOLOSAT website is at its' very early stage.
+### 👷 Current State
+
+- 🔴 Start page
+- 🔴 Light/Dark themes
+- 🔴 More themes
+- 🔴 i18n Internationalization for French and English
+- 🔴 Table of contents for blog posts
+- 🔴 Markdown blog posts using Mdsvex
+- 🔴 RSS feed
+- 🔴 Search Functionality
+- 🔴 SEO friendly
+- 🔴 Lazy image loading
+- 🔴 Fast performance (perfect Lighthouse score)
+- 🔴 Multi-language Support beyond French and English
 
 ## 📝 License
 
