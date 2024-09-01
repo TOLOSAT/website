@@ -4,7 +4,7 @@
 	import Instagram from '~icons/tabler/brand-instagram'
 	import Linkedin from '~icons/tabler/brand-linkedin'
 
-	import * as config from '$lib/config/config'
+	import * as config from '$lib/config'
 </script>
 
 <footer>

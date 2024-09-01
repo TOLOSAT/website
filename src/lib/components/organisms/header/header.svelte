@@ -1,46 +1,44 @@
 <script lang="ts">
+	import LanguageSelector from '$components/molecules/language-selector/language-selector.svelte'
 	import Sun from '~icons/tabler/sun'
-	import Language from '~icons/tabler/language'
-
-	import * as m from '$lib/paraglide/messages'
 </script>
 
 <header>
-	<div class="container">
-		<nav>
-			<ul>
-				<li><a href="/">{m.about()}</a></li>
-				<li><a href="/">The Cubesat</a></li>
-				<li><a href="/">News & Events</a></li>
-				<li><a href="/">Contact</a></li>
-			</ul>
-		</nav>
+	<nav>
+		<ul>
+			<li><a href="/">About</a></li>
+			<li><a href="/">The Cubesat</a></li>
+			<li><a href="/">Blog</a></li>
+		</ul>
 
-		<div class="logo">
-			<a href="/">
-				<img src="images/tolosat-icon.png" alt="Tolosat logo" />
-			</a>
-		</div>
+		<a class="logo" href="/">
+			<img src="images/tolosat-icon.png" alt="Tolosat logo" />
+		</a>
 
 		<div class="settings">
-			<input type="search" placeholder="Search..." />
-
+			<!-- <input type="search" placeholder="Search..." /> -->
+			<LanguageSelector />
 			<Sun width="1.5rem" height="1.5rem" />
-			<Language width="1.5rem" height="1.5rem" />
 		</div>
-	</div>
+	</nav>
 </header>
 
 <style>
 	header {
-		height: 80px;
+		position: sticky;
+		top: 0;
+		background: var(--primary);
+		min-height: var(--header-height);
 	}
 
-	.container {
+	nav {
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
 		align-items: center;
-		height: inherit;
+		margin-inline: auto;
+		padding-inline: var(--site-padding);
+		max-width: var(--site-max-width);
+		min-height: inherit;
 	}
 
 	ul {
@@ -49,9 +47,16 @@
 		padding-left: 0;
 		list-style: none;
 	}
+
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+
+	.logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	img {
@@ -66,14 +71,14 @@
 		gap: 1.5rem;
 	}
 
-	input {
+	/* input {
 		border: 1px solid var(--foreground);
 		border-radius: 0.25rem;
 		background-color: var(--background);
 		height: 1.5rem;
 		color: var(--foreground);
 		font-family: var(--font);
-	}
+	} */
 
 	::placeholder {
 		opacity: 1; /* Firefox */

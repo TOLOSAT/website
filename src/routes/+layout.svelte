@@ -1,40 +1,34 @@
 <script lang="ts">
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit'
-	import { i18n } from '$lib/i18n'
-
 	import '../app.css'
 
 	import { ModeWatcher } from 'mode-watcher'
-	import { Header } from '$lib/components/layout/header'
-	import { Footer } from '$lib/components/layout/footer'
-	import { Construction } from '$lib/components/atoms/construction'
+	import { Header } from '$components/organisms/header'
+	import { Footer } from '$components/organisms/footer'
+	import { Banner } from '$components/organisms/banner'
 </script>
 
-<ParaglideJS {i18n}>
-	<ModeWatcher />
+<ModeWatcher />
 
-	<div class="layout">
-		<Header />
+<div class="layout">
+	<Banner />
+	<Header />
 
-		<main>
-			<Construction />
-			<slot />
-		</main>
+	<main>
+		<slot />
+	</main>
 
-		<Footer />
-	</div>
-</ParaglideJS>
+	<Footer />
+</div>
 
 <style>
 	.layout {
 		display: flex;
 		flex-direction: column;
-		padding-inline: 3rem;
-		height: 100dvh;
 	}
 
 	main {
 		flex: 1;
-		padding-block: 1.5rem;
+		padding-inline: var(--site-padding);
+		max-width: var(--site-max-width);
 	}
 </style>

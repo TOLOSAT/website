@@ -1,0 +1,20 @@
+:root {
+	--text: #020024;
+	--background: #fff;
+	--primary: #f2c063;
+	--secondary: #a4cde5;
+	--accent: #89aec2;
+}
+
+.dark {
+	--text: #fff;
+	--background: #020024;
+	--primary: #f2c063;
+	--secondary: #1a435b;
+	--accent: #3d6276;
+}
+
+body {
+	background: var(--background);
+	color: var(--text);
+}

@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap');
 
-:root {
-	--font: 'Inter', arial;
-}
-
 body {
-	font-family: var(--font);
+	font-weight: 500;
+	font-family: 'Inter', arial;
 }

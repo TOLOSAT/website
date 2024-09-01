@@ -1,9 +1,22 @@
-@import './styles/theme.css';
-@import './styles/font.css';
+@import './styles/themes.css';
+@import './styles/fonts.css';
 
-html,
-body {
-	height: 100%;
+/* Media Sizes
+- Mobile: 320px
+- Phablet: 480px
+- Small Tablet: 640px
+- Tablet: 768px
+- Desktop: 1024px
+- Large Desktop: 1440px
+*/
+
+:root {
+	/* Layout */
+	--top-banner-height: 3.25rem;
+	--header-height: 4.5rem;
+	--site-padding: 1.5rem;
+	--site-max-width: 800px;
+	--blog-max-width: 640px;
 }
 
 body {
