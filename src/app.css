@@ -14,6 +14,8 @@
 	/* Layout */
 	--top-banner-height: 3.25rem;
 	--header-height: 4.5rem;
+	--footer-mobile-height: 8rem;
+	--footer-desktop-height: 6rem;
 	--site-padding: 1.5rem;
 	--site-max-width: 800px;
 	--blog-max-width: 640px;

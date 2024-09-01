@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit'
+	import { i18n } from '$lib/i18n'
+
 	import '../app.css'
 
 	import { ModeWatcher } from 'mode-watcher'
@@ -7,18 +10,20 @@
 	import { Banner } from '$components/organisms/banner'
 </script>
 
-<ModeWatcher />
+<ParaglideJS {i18n}>
+	<ModeWatcher />
 
-<div class="layout">
-	<Banner />
-	<Header />
+	<div class="layout">
+		<Banner />
+		<Header />
 
-	<main>
-		<slot />
-	</main>
+		<main>
+			<slot />
+		</main>
 
-	<Footer />
-</div>
+		<Footer />
+	</div>
+</ParaglideJS>
 
 <style>
 	.layout {
@@ -27,7 +32,7 @@
 	}
 
 	main {
-		flex: 1;
+		margin-inline: auto;
 		padding-inline: var(--site-padding);
 		max-width: var(--site-max-width);
 	}

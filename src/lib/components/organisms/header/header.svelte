@@ -1,24 +1,24 @@
 <script lang="ts">
 	import LanguageSelector from '$components/molecules/language-selector/language-selector.svelte'
-	import Sun from '~icons/tabler/sun'
+	import ThemeToggle from '$components/molecules/theme-toggle/theme-toggle.svelte'
 </script>
 
 <header>
 	<nav>
 		<ul>
-			<li><a href="/">About</a></li>
+			<li><a href="/about">About</a></li>
 			<li><a href="/">The Cubesat</a></li>
 			<li><a href="/">Blog</a></li>
 		</ul>
 
 		<a class="logo" href="/">
-			<img src="images/tolosat-icon.png" alt="Tolosat logo" />
+			<img src="/images/tolosat-icon.png" alt="Tolosat logo" />
 		</a>
 
 		<div class="settings">
 			<!-- <input type="search" placeholder="Search..." /> -->
 			<LanguageSelector />
-			<Sun width="1.5rem" height="1.5rem" />
+			<ThemeToggle />
 		</div>
 	</nav>
 </header>

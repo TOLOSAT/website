@@ -44,20 +44,20 @@
 
 <style>
 	footer {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 128px;
+		background: var(--primary);
+		min-height: var(--footer-mobile-height);
 	}
 
 	div {
 		display: flex;
-		flex: 1;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 0.5rem;
-		height: 100%;
+		margin-inline: auto;
+		padding-inline: var(--site-padding);
+		max-width: var(--site-max-width);
+		min-height: inherit;
 	}
 
 	ul {
@@ -83,7 +83,7 @@
 
 	@media (min-width: 640px) {
 		footer {
-			min-height: 96px;
+			min-height: var(--footer-desktop-height);
 		}
 
 		div {
