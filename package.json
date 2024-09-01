@@ -12,7 +12,7 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@iconify-json/tabler": "^1.1.121",
+		"@iconify-json/tabler": "^1.2.0",
 		"@inlang/paraglide-js": "1.11.2",
 		"@inlang/paraglide-sveltekit": "^0.11.0",
 		"@melt-ui/pp": "^0.3.2",
