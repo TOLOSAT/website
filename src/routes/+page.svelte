@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { userPrefersMode, systemPrefersMode, mode, setMode } from 'mode-watcher';
+	import {
+		userPrefersMode,
+		systemPrefersMode,
+		mode,
+		setMode,
+	} from 'mode-watcher'
 </script>
 
 <h1>TOLOSAT</h1>

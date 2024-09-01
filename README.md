@@ -4,18 +4,18 @@
   <img src="static/images/tolosat-icon.png" width="30%" alt="TOLOSAT Icon">
 </p>
 
-Welcome to the official website of TOLOSAT. If you are interested in contributing, please refer to
-our [contribution guidelines](/CONTRIBUTING.md).
+Welcome to the official website of TOLOSAT. If you are interested in
+contributing, please refer to our [contribution guidelines](/CONTRIBUTING.md).
 
 ## ⚙️ Requirements
 
-You need to install the latest Node.js version and npm to run the website. You can download both
-[here](https://nodejs.org/en/download/package-manager).
+You need to install the latest Node.js version and npm to run the website. You
+can download both [here](https://nodejs.org/en/download/package-manager).
 
 > [!IMPORTANT]
-> To get autocompletion and a nice code environment, I recommend using
-> [VSCode](https://code.visualstudio.com/) and install **workspace recommended extensions** in the
-> extension panel.
+> To get autocompletion and a nice code environment, I recommend
+> using [VSCode](https://code.visualstudio.com/) and install **workspace
+> recommended extensions** in the extension panel.
 
 ## ⚡️ Quick Usage
 
@@ -28,8 +28,9 @@ To quickly run the website, you need to know the following commands:
 | `npm run build` | Builds the project for production |
 
 > [!TIP]
-> I recommend using [pnpm](https://pnpm.io/installation) instead of **npm** to save disk
-> space and boost installation speed. More information [here](https://pnpm.io/motivation).
+> I recommend using [pnpm](https://pnpm.io/installation) instead of
+> **npm** to save disk space and boost installation speed. More information
+> [here](https://pnpm.io/motivation).
 
 ## ✨ Features
 

@@ -1,1 +1,1 @@
-export { default as Construction } from './construction.svelte';
+export { default as Construction } from './construction.svelte'

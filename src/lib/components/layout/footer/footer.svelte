@@ -1,100 +1,102 @@
 <script lang="ts">
-  import Mail from '~icons/tabler/mail';
-  import Github from '~icons/tabler/brand-github';
-  import Instagram from '~icons/tabler/brand-instagram';
-  import Linkedin from '~icons/tabler/brand-linkedin';
+	import Mail from '~icons/tabler/mail'
+	import Github from '~icons/tabler/brand-github'
+	import Instagram from '~icons/tabler/brand-instagram'
+	import Linkedin from '~icons/tabler/brand-linkedin'
 
-  import * as config from '$lib/config/config';
+	import * as config from '$lib/config/config'
 </script>
 
 <footer>
-  <div>
-    <ul>
-      <li>
-        <a href={config.mail} target="_blank">
-          <Mail style="width: 1.5rem; height: 1.5rem;" />
-        </a>
-      </li>
-      <li>
-        <a href={config.instagram} target="_blank">
-          <Instagram style="width: 1.5rem; height: 1.5rem;" />
-        </a>
-      </li>
-      <li>
-        <a href={config.github} target="_blank">
-          <Github style="width: 1.5rem; height: 1.5rem;" />
-        </a>
-      </li>
-      <li>
-        <a href={config.linkedin} target="_blank">
-          <Linkedin style="width: 1.5rem; height: 1.5rem;" />
-        </a>
-      </li>
-    </ul>
+	<div>
+		<ul>
+			<li>
+				<a href={config.mail} target="_blank">
+					<Mail style="width: 1.5rem; height: 1.5rem;" />
+				</a>
+			</li>
+			<li>
+				<a href={config.instagram} target="_blank">
+					<Instagram style="width: 1.5rem; height: 1.5rem;" />
+				</a>
+			</li>
+			<li>
+				<a href={config.github} target="_blank">
+					<Github style="width: 1.5rem; height: 1.5rem;" />
+				</a>
+			</li>
+			<li>
+				<a href={config.linkedin} target="_blank">
+					<Linkedin style="width: 1.5rem; height: 1.5rem;" />
+				</a>
+			</li>
+		</ul>
 
-    <p>
-      Made with ❤️ using <a href="https://kit.svelte.dev/" target="_blank">Sveltekit</a><br />
-      &copy; {new Date().getFullYear()} <a href="/">Tolosat</a> —
-      <em>Toulouse</em>
-    </p>
-  </div>
+		<p>
+			Made with ❤️ using <a href="https://kit.svelte.dev/" target="_blank"
+				>Sveltekit</a
+			><br />
+			&copy; {new Date().getFullYear()} <a href="/">Tolosat</a> —
+			<em>Toulouse</em>
+		</p>
+	</div>
 </footer>
 
 <style>
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 128px;
-  }
+	footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 128px;
+	}
 
-  div {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    height: 100%;
-  }
+	div {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		height: 100%;
+	}
 
-  ul {
-    display: flex;
-    gap: 1rem;
-    margin-block: 0;
-    padding-left: 0;
-    list-style: none;
-  }
+	ul {
+		display: flex;
+		gap: 1rem;
+		margin-block: 0;
+		padding-left: 0;
+		list-style: none;
+	}
 
-  a {
-    color: inherit;
-  }
+	a {
+		color: inherit;
+	}
 
-  p {
-    margin-block: 0;
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 2;
-    text-align: center;
-    text-underline-offset: 4px;
-  }
+	p {
+		margin-block: 0;
+		font-weight: 500;
+		font-size: 0.875rem;
+		line-height: 2;
+		text-align: center;
+		text-underline-offset: 4px;
+	}
 
-  @media (min-width: 640px) {
-    footer {
-      min-height: 96px;
-    }
+	@media (min-width: 640px) {
+		footer {
+			min-height: 96px;
+		}
 
-    div {
-      flex-direction: row;
-      justify-content: space-between;
-    }
+		div {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 
-    ul {
-      order: 2;
-    }
+		ul {
+			order: 2;
+		}
 
-    p {
-      text-align: left;
-    }
-  }
+		p {
+			text-align: left;
+		}
+	}
 </style>
