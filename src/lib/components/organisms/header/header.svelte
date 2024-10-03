@@ -7,8 +7,8 @@
 	<nav>
 		<ul>
 			<li><a href="/about">About</a></li>
-			<li><a href="/">The Cubesat</a></li>
-			<li><a href="/">Blog</a></li>
+			<li><a href="/cubesat">The Cubesat</a></li>
+			<li><a href="/blog">Blog</a></li>
 		</ul>
 
 		<a class="logo" href="/">
@@ -27,6 +27,7 @@
 	header {
 		position: sticky;
 		top: 0;
+		z-index: 1000;
 		background: var(--primary);
 		min-height: var(--header-height);
 	}

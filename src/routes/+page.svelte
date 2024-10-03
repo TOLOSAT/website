@@ -2,8 +2,13 @@
 	import PostCard from '$components/molecules/post-card/post-card.svelte'
 	import { onMount } from 'svelte'
 	import CircleArrowUpRight from '~icons/tabler/circle-arrow-up-right'
+	import Pause from '~icons/tabler/pause'
+	import Play from '~icons/tabler/play'
+	import Volume from '~icons/tabler/volume'
+	import VolumeOff from '~icons/tabler/volume-off'
 
 	let muted = true
+	let paused = false
 	let videoElement: HTMLVideoElement | null
 
 	onMount(() => {
@@ -15,10 +20,12 @@
 			return
 		}
 
-		if (videoElement.paused) {
+		if (paused) {
 			videoElement.play()
+			paused = false
 		} else {
 			videoElement.pause()
+			paused = true
 		}
 	}
 </script>
@@ -32,13 +39,27 @@
 			engineering.
 		</h2>
 	</div>
-	<video autoplay loop {muted}>
-		<source src="/videos/tolosat-banner.mp4" />
-		<track kind="captions" srclang="en" label="English" />
-		Your browser does not support the video tag.
-	</video>
-	<button on:click={() => (muted = !muted)}> Mute/Unmute </button>
-	<button on:click={toggleVideo}> Pause/Resume</button>
+	<div class="video-container">
+		<video autoplay loop {muted}>
+			<source src="/videos/tolosat-banner.mp4" />
+			<track kind="captions" srclang="en" label="English" />
+			Your browser does not support the video tag.
+		</video>
+		<button class="mute-button" on:click={() => (muted = !muted)}>
+			{#if muted}
+				<VolumeOff width="1.5rem" height="1.5rem" />
+			{:else}
+				<Volume width="1.5rem" height="1.5rem" />
+			{/if}
+		</button>
+		<button class="pause-button" on:click={toggleVideo}>
+			{#if paused}
+				<Play width="1.5rem" height="1.5rem" />
+			{:else}
+				<Pause width="1.5rem" height="1.5rem" />
+			{/if}
+		</button>
+	</div>
 </section>
 
 <section class="news-section">
@@ -61,17 +82,24 @@
 </section>
 
 <section>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum velit tempora
-	dolores eveniet deserunt animi impedit consequuntur incidunt illum. Temporibus
-	laborum eum numquam necessitatibus corrupti quod cupiditate sint, earum
-	asperiores dignissimos perspiciatis iste blanditiis obcaecati nesciunt nam
-	porro recusandae! A tenetur fuga accusamus quaerat aut vitae porro ipsa
-	consectetur esse, ut nobis deserunt itaque necessitatibus minima reiciendis
-	repellat iusto! Inventore rem possimus incidunt facere deserunt atque
-	explicabo praesentium accusantium quos velit beatae, dignissimos id quod
-	deleniti omnis quam, minima unde voluptatum laborum veritatis dolores
-	provident. Ducimus laboriosam eveniet tenetur id animi, excepturi eum neque
-	earum, corporis, impedit dolore maiores aliquam!
+	<h1>Our sponsors</h1>
+	<p>
+		We are grateful for the support of our sponsors. They help us make our
+		dreams come true.
+	</p>
+
+	<ul class="sponsors">
+		<li>
+			<a href="https://www.cnes.fr/en">
+				<img src="/images/cnes-logo.png" alt="CNES" />
+			</a>
+		</li>
+		<li>
+			<a href="https://www.isae-supaero.fr/en/">
+				<img src="/images/isae-logo.png" alt="ISAE-SUPAERO" />
+			</a>
+		</li>
+	</ul>
 </section>
 
 <style>
@@ -79,10 +107,37 @@
 		margin-block: 2rem;
 	}
 
+	.video-container {
+		position: relative;
+	}
+
 	video {
 		margin-inline: -1.5rem;
 		border-radius: 0.75rem;
 		width: calc(100% + 3rem);
+	}
+
+	.video-container button {
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		border: none;
+		border-radius: 50%;
+		background: var(--background);
+		padding: 0.5rem 0.5rem;
+		color: var(--text);
+	}
+
+	.mute-button {
+		right: 3.5rem;
+		bottom: 1.5rem;
+	}
+
+	.pause-button {
+		right: 0rem;
+		bottom: 1.5rem;
 	}
 
 	.subtitle {
@@ -117,5 +172,17 @@
 		border-radius: 0.75rem;
 		background: var(--secondary);
 		padding: 1.5rem;
+	}
+
+	.sponsors {
+		display: flex;
+		gap: 1.5rem;
+		padding-left: 0;
+		list-style: none;
+	}
+
+	img {
+		aspect-ratio: initial;
+		width: 8rem;
 	}
 </style>
