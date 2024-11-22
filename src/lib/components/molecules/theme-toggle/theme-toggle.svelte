@@ -5,7 +5,7 @@
 	import Moon from '~icons/tabler/moon'
 </script>
 
-<button on:click={toggleMode}>
+<button onclick={toggleMode}>
 	{#if $mode === 'dark'}
 		<Moon style="width: 1.5rem; height: 1.5rem;" />
 	{:else}

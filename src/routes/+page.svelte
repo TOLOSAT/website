@@ -7,8 +7,8 @@
 	import Volume from '~icons/tabler/volume'
 	import VolumeOff from '~icons/tabler/volume-off'
 
-	let muted = true
-	let paused = false
+	let muted = $state(true)
+	let paused = $state(false)
 	let videoElement: HTMLVideoElement | null
 
 	onMount(() => {
@@ -45,14 +45,14 @@
 			<track kind="captions" srclang="en" label="English" />
 			Your browser does not support the video tag.
 		</video>
-		<button class="mute-button" on:click={() => (muted = !muted)}>
+		<button class="mute-button" onclick={() => (muted = !muted)}>
 			{#if muted}
 				<VolumeOff width="1.5rem" height="1.5rem" />
 			{:else}
 				<Volume width="1.5rem" height="1.5rem" />
 			{/if}
 		</button>
-		<button class="pause-button" on:click={toggleVideo}>
+		<button class="pause-button" onclick={toggleVideo}>
 			{#if paused}
 				<Play width="1.5rem" height="1.5rem" />
 			{:else}
@@ -136,7 +136,7 @@
 	}
 
 	.pause-button {
-		right: 0rem;
+		right: 0;
 		bottom: 1.5rem;
 	}
 

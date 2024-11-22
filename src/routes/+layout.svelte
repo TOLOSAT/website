@@ -8,6 +8,12 @@
 	import { Header } from '$components/organisms/header'
 	import { Footer } from '$components/organisms/footer'
 	import { Banner } from '$components/organisms/banner'
+
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <ParaglideJS {i18n}>
@@ -18,7 +24,7 @@
 		<Header />
 
 		<main>
-			<slot />
+			{@render children?.()}
 		</main>
 
 		<Footer />
