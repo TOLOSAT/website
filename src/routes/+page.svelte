@@ -1,6 +1,9 @@
 <script lang="ts">
 	import PostCard from '$components/molecules/post-card/post-card.svelte'
 	import { onMount } from 'svelte'
+
+	import Journey from '$components/molecules/journey.svelte'
+
 	import CircleArrowUpRight from '~icons/tabler/circle-arrow-up-right'
 	import Pause from '~icons/tabler/pause'
 	import Play from '~icons/tabler/play'
@@ -32,7 +35,7 @@
 
 <section>
 	<div>
-		<h1>TOLOSAT, the 3U CubeSat student only project from Toulouse</h1>
+		<h2>TOLOSAT, the 3U CubeSat student only project from Toulouse</h2>
 		<h2 class="subtitle">
 			Join us in our mission to design, build, and launch a nanosatellite.
 			Explore space technology and gain hands-on experience in aerospace
@@ -62,6 +65,21 @@
 	</div>
 </section>
 
+<section class="introduction-section">
+	<h1>Tolosat</h1>
+	<p>A student association to explore space cubesat by making one</p>
+
+	<div class="truc">
+		<div>+10 years</div>
+		<div>1000 students</div>
+		<div>Phase C</div>
+		<div>Sponsors</div>
+	</div>
+
+	<h2>Road Map</h2>
+	<Journey />
+</section>
+
 <section class="news-section">
 	<div class="news-header">
 		<h2>Featured News</h2>
@@ -71,8 +89,8 @@
 				width="1.5rem"
 				height="1.5rem"
 				color="var(--primary)"
-			/></a
-		>
+			/>
+		</a>
 	</div>
 	<div class="news-content">
 		<PostCard />
@@ -105,6 +123,25 @@
 <style>
 	section {
 		margin-block: 2rem;
+	}
+
+	.introduction-section {
+		.truc {
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-block: 1.5rem;
+				border-radius: 0.75rem;
+				background: var(--secondary);
+				padding: 1.5rem;
+				font-weight: 500;
+				font-size: 1.5rem;
+			}
+		}
 	}
 
 	.video-container {
@@ -150,6 +187,7 @@
 		display: flex;
 		flex-direction: column;
 	}
+
 	.news-header {
 		display: flex;
 		justify-content: space-between;

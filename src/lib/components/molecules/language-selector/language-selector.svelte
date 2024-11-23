@@ -24,36 +24,38 @@
 <style>
 	ul {
 		display: flex;
-		margin-left: 0;
+		gap: 0.25rem;
+		margin-block: 0;
+		border: 1px solid var(--text);
+		border-radius: 0.375rem;
+		padding-left: 0;
+		font-size: 0.875rem;
 		list-style: none;
+	}
+
+	li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	[aria-current='page'] {
+		color: var(--accent);
 	}
 
 	a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: 1px solid var(--text);
-		border-right-color: transparent;
-		background: var(--accent);
-		width: 2rem;
-		height: 2rem;
+		width: 1.75rem;
+		height: 1.75rem;
 		color: inherit;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
 
-	li:first-child a {
-		border-top-left-radius: 0.375rem;
-		border-bottom-left-radius: 0.375rem;
-	}
-
-	li:last-child a {
-		border-right-color: var(--text);
-		border-top-right-radius: 0.375rem;
-		border-bottom-right-radius: 0.375rem;
-	}
-
-	[aria-current='page'] {
-		color: var(--primary);
+	li:not(:last-child):after {
+		content: '/';
 	}
 </style>
