@@ -1,4 +1,12 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "test_message": "Grenouille"
+    "main_hero_subtitle": "Rejoignez-nous dans  la conception, la fabrication et le lancement d'un nanosatellite.",
+    "main_hero_title": "TOLOSAT, un Cubesat 3U réalisé par des étudiants",
+    "main_join_button": "Rejoignez-nous",
+    "hero_footer": "En savoir plus sur TOLOSAT",
+    "main_news_title": "Nos dernières actualités",
+    "main_news_more": "Plus d'actualités sur TOLOSAT",
+    "main_support_title": "Soutenez Tolosat ❤️",
+    "main_support_text": "Nous sommes reconnaissants du soutien de nos sponsors. Ils nous aident à rendre notre rêve réalité.",
+    "noisy_dizzy_kudu_reap": "TOLOSAT en vidéo"
 }

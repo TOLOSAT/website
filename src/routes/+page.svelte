@@ -11,6 +11,8 @@
 	import Volume from '~icons/tabler/volume'
 	import VolumeOff from '~icons/tabler/volume-off'
 
+	import * as m from '$lib/paraglide/messages.js'
+
 	let muted = $state(true)
 	let paused = $state(false)
 
@@ -47,10 +49,10 @@
 <section class="hero-section">
 	<div class="hero-content">
 		<div>
-			<h1>TOLOSAT, a 3U Cubesat made by students</h1>
+			<h1>{m.main_hero_title()}</h1>
 
 			<h2 class="hero-subtitle">
-				Join us in our mission to design, build, and launch a nanosatellite.
+				{m.main_hero_subtitle()}
 			</h2>
 
 			<div class="hero-buttons">
@@ -59,7 +61,8 @@
 				</button>
 
 				<button>
-					Join Us <SatelliteIcon width="1.5rem" height="1.5rem" />
+					{m.main_join_button()}
+					<SatelliteIcon width="1.5rem" height="1.5rem" />
 				</button>
 			</div>
 		</div>
@@ -75,7 +78,7 @@
 	</div>
 
 	<div class="hero-footer">
-		<p>Discover more about TOLOSAT</p>
+		<p>{m.hero_footer()}</p>
 		<span class="hero-arrow">
 			<ArrowDownIcon width="1.5rem" height="1.5rem" />
 		</span>
@@ -83,7 +86,7 @@
 </section>
 
 <section class="video-section">
-	<h1>TOLOSAT in video</h1>
+	<h1>{m.noisy_dizzy_kudu_reap()}</h1>
 
 	<div class="video-container">
 		<video autoplay loop muted>
@@ -112,9 +115,9 @@
 
 <section class="news-section">
 	<div class="news-header">
-		<h1>Our latests news</h1>
+		<h1>{m.main_news_title()}</h1>
 		<a href="/">
-			More TOLOSAT News
+			{m.main_news_more()}
 			<CircleArrowUpRight
 				width="1.5rem"
 				height="1.5rem"
@@ -131,10 +134,9 @@
 </section>
 
 <section class="support-section">
-	<h1>Support Tolosat ❤️</h1>
+	<h1>{m.main_support_title()}</h1>
 	<p>
-		We are grateful for the support of our sponsors. They help us make our
-		dreams come true.
+		{m.main_support_text()}
 	</p>
 
 	<ul class="support-sponsors">

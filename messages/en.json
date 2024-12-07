@@ -1,4 +1,12 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "test_message": "Frog"
+    "main_hero_subtitle": "Join us in our mission to design, build, and launch a nanosatellite.",
+    "main_hero_title": "TOLOSAT, a 3U Cubesat made by students",
+    "main_join_button": "Join Us",
+    "hero_footer": "Discover more about TOLOSAT",
+    "main_news_title": "Our latests news",
+    "main_news_more": "More TOLOSAT News",
+    "main_support_title": "Support Tolosat ❤️",
+    "main_support_text": "We are grateful for the support of our sponsors. They help us make our\n\t\tdreams come true.",
+    "noisy_dizzy_kudu_reap": "TOLOSAT in video"
 }
