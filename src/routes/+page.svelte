@@ -1,8 +1,9 @@
 <script lang="ts">
 	import PostCard from '$components/molecules/post-card/post-card.svelte'
-	import { onMount } from 'svelte'
 
-	import Journey from '$components/molecules/journey.svelte'
+	import RouteIcon from '~icons/tabler/route'
+	import SatelliteIcon from '~icons/tabler/satellite'
+	import ArrowDownIcon from '~icons/tabler/arrow-down'
 
 	import CircleArrowUpRight from '~icons/tabler/circle-arrow-up-right'
 	import Pause from '~icons/tabler/pause'
@@ -12,9 +13,10 @@
 
 	let muted = $state(true)
 	let paused = $state(false)
+
 	let videoElement: HTMLVideoElement | null
 
-	onMount(() => {
+	$effect(() => {
 		videoElement = document.querySelector('video')
 	})
 
@@ -22,7 +24,6 @@
 		if (!videoElement) {
 			return
 		}
-
 		if (paused) {
 			videoElement.play()
 			paused = false
@@ -31,30 +32,74 @@
 			paused = true
 		}
 	}
+
+	function toggleMute() {
+		if (!videoElement) {
+			return
+		}
+
+		muted = !muted
+
+		videoElement.muted = muted
+	}
 </script>
 
-<section>
-	<div>
-		<h2>TOLOSAT, the 3U CubeSat student only project from Toulouse</h2>
-		<h2 class="subtitle">
-			Join us in our mission to design, build, and launch a nanosatellite.
-			Explore space technology and gain hands-on experience in aerospace
-			engineering.
-		</h2>
+<section class="hero-section">
+	<div class="hero-content">
+		<div>
+			<h1>TOLOSAT, a 3U Cubesat made by students</h1>
+
+			<h2 class="hero-subtitle">
+				Join us in our mission to design, build, and launch a nanosatellite.
+			</h2>
+
+			<div class="hero-buttons">
+				<button>
+					Road Map <RouteIcon width="1.5rem" height="1.5rem" />
+				</button>
+
+				<button>
+					Join Us <SatelliteIcon width="1.5rem" height="1.5rem" />
+				</button>
+			</div>
+		</div>
+
+		<div class="hero-asso">
+			<a href="/">
+				<img src="/images/astre.png" alt="" />
+			</a>
+			<a href="/">
+				<img src="/images/cubesat-isae.png" alt="" />
+			</a>
+		</div>
 	</div>
+
+	<div class="hero-footer">
+		<p>Discover more about TOLOSAT</p>
+		<span class="hero-arrow">
+			<ArrowDownIcon width="1.5rem" height="1.5rem" />
+		</span>
+	</div>
+</section>
+
+<section class="video-section">
+	<h1>TOLOSAT in video</h1>
+
 	<div class="video-container">
-		<video autoplay loop {muted}>
+		<video autoplay loop muted>
 			<source src="/videos/tolosat-banner.mp4" />
 			<track kind="captions" srclang="en" label="English" />
 			Your browser does not support the video tag.
 		</video>
-		<button class="mute-button" onclick={() => (muted = !muted)}>
+
+		<button class="mute-button" onclick={toggleMute}>
 			{#if muted}
 				<VolumeOff width="1.5rem" height="1.5rem" />
 			{:else}
 				<Volume width="1.5rem" height="1.5rem" />
 			{/if}
 		</button>
+
 		<button class="pause-button" onclick={toggleVideo}>
 			{#if paused}
 				<Play width="1.5rem" height="1.5rem" />
@@ -65,24 +110,9 @@
 	</div>
 </section>
 
-<section class="introduction-section">
-	<h1>Tolosat</h1>
-	<p>A student association to explore space cubesat by making one</p>
-
-	<div class="truc">
-		<div>+10 years</div>
-		<div>1000 students</div>
-		<div>Phase C</div>
-		<div>Sponsors</div>
-	</div>
-
-	<h2>Road Map</h2>
-	<Journey />
-</section>
-
 <section class="news-section">
 	<div class="news-header">
-		<h2>Featured News</h2>
+		<h1>Our latests news</h1>
 		<a href="/">
 			More TOLOSAT News
 			<CircleArrowUpRight
@@ -92,6 +122,7 @@
 			/>
 		</a>
 	</div>
+
 	<div class="news-content">
 		<PostCard />
 		<PostCard />
@@ -99,14 +130,14 @@
 	</div>
 </section>
 
-<section>
-	<h1>Our sponsors</h1>
+<section class="support-section">
+	<h1>Support Tolosat ❤️</h1>
 	<p>
 		We are grateful for the support of our sponsors. They help us make our
 		dreams come true.
 	</p>
 
-	<ul class="sponsors">
+	<ul class="support-sponsors">
 		<li>
 			<a href="https://www.cnes.fr/en">
 				<img src="/images/cnes-logo.png" alt="CNES" />
@@ -121,27 +152,88 @@
 </section>
 
 <style>
-	section {
-		margin-block: 2rem;
+	.hero-section {
+		margin-block: 10rem 8rem;
 	}
 
-	.introduction-section {
-		.truc {
-			display: flex;
-			justify-content: space-between;
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 4rem;
+	}
 
-			div {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-block: 1.5rem;
-				border-radius: 0.75rem;
-				background: var(--secondary);
-				padding: 1.5rem;
-				font-weight: 500;
-				font-size: 1.5rem;
-			}
+	h1 {
+		font-weight: 500;
+		font-size: 3rem;
+	}
+
+	.hero-subtitle {
+		color: var(--text);
+		color: var(--text-secondary);
+		font-weight: 400;
+		font-size: 1.5rem;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1.5rem;
+		margin-block: 3rem;
+
+		button {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			cursor: pointer;
+			border: none;
+
+			border-radius: 0.75rem;
+			background: var(--primary);
+			padding: 1rem 2rem;
+			color: var(--background);
+			font-weight: 500;
+			font-size: 1.25rem;
 		}
+	}
+
+	.hero-asso {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+
+		img {
+			aspect-ratio: initial;
+			width: 8rem;
+		}
+	}
+
+	.hero-footer {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@keyframes jumpInfinite {
+		0% {
+			top: 3rem;
+		}
+		50% {
+			top: 4.5rem;
+		}
+		100% {
+			top: 3rem;
+		}
+	}
+
+	.hero-arrow {
+		position: absolute;
+		animation: jumpInfinite 1.5s infinite;
+	}
+
+	.video-section {
+		margin-bottom: 6rem;
 	}
 
 	.video-container {
@@ -177,11 +269,6 @@
 		bottom: 1.5rem;
 	}
 
-	.subtitle {
-		font-weight: 500;
-		font-size: 1.25rem;
-	}
-
 	/* Featured News */
 	.news-section {
 		display: flex;
@@ -212,15 +299,34 @@
 		padding: 1.5rem;
 	}
 
-	.sponsors {
+	.support-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-block: 10rem 8rem;
+
+		h1 {
+			margin-bottom: 0.5rem;
+			font-weight: 500;
+			font-size: 3rem;
+		}
+
+		p {
+			margin-top: 0.5rem;
+			color: var(--text-secondary);
+		}
+	}
+
+	.support-sponsors {
 		display: flex;
 		gap: 1.5rem;
 		padding-left: 0;
 		list-style: none;
-	}
 
-	img {
-		aspect-ratio: initial;
-		width: 8rem;
+		img {
+			border-radius: 50%;
+			aspect-ratio: initial;
+			width: 8rem;
+		}
 	}
 </style>
