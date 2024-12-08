@@ -1,7 +1,11 @@
 <script lang="ts">
+	import type { PageData } from './$types'
+
 	import ArrowUpRightIcon from '~icons/tabler/arrow-up-right'
 	import AirBalloonIcon from '~icons/tabler/air-balloon'
 	import RocketIcon from '~icons/tabler/rocket'
+	
+	let { data }: { data: PageData } = $props()
 </script>
 
 <section class="origin-section">
@@ -100,60 +104,14 @@
 	</p>
 
 	<ul>
+		{#each data.teams as team}
 		<li>
-			<a href="/">
-				<img src="/images/teams/thermal.jpg" alt="Themal Logo" />
-				<span>Thermal</span>
+			<a href="/teams/{team.slug}">
+				<img src="/images/teams/{team.logo}" alt="{team.title} Logo" />
+				<span>{team.title}</span>
 			</a>
 		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/rf.jpg" alt="RF Logo" />
-				<span>RF</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/power.jpg" alt="Power Logo" />
-				<span>Power</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/obc.jpg" alt="OBC Logo" />
-				<span>OBC</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/iridium.jpg" alt="Iridium Logo" />
-				<span>Iridium</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/gravimetry.jpg" alt="Gravimetry Logo" />
-				<span>Gravimetry</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/media.jpg" alt="Media Logo" />
-				<span>Media</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/aocs.jpg" alt="AOCS Logo" />
-				<span>AOCS</span>
-			</a>
-		</li>
-		<li>
-			<a href="/">
-				<img src="/images/teams/structure.jpg" alt="Structure Logo" />
-				<span>Structure</span>
-			</a>
-		</li>
+		{/each}
 	</ul>
 </section>
 
