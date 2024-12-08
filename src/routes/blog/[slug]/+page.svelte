@@ -56,7 +56,7 @@
 	<!-- Tags -->
 	<div class="categories">
 		{#each data.meta.categories as category}
-			<a href={`/blog/categories/${category}`}>&num;{category}</a>
+			<a href="/">&num;{category}</a>
 		{/each}
 	</div>
 
