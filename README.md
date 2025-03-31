@@ -1,5 +1,8 @@
 # TOLOSAT Official Website
 
+As of now, the website is no longer maintained as media is replacing the old website using wordpress.
+It will be kept here for legacy's sake.
+
 <p align="center">
   <img src="static/images/tolosat-icon.png" width="30%" alt="TOLOSAT Icon">
 </p>
